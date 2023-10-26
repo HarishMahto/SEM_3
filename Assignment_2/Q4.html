@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            #special-div {
+                display: inline;
+                font-size: 18px;
+                transition: color 0.3s;
+                font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+                font-size: 50px;
+            }
+
+            #image {
+                width: 600px;
+                height: 350px;
+                margin-top: 100px;
+            }
+        </style>
+    </head>
+    <body>
+        <center>
+        <img id="image" src="3.jpg" alt="Image" onmouseover="changeTextColor(true)" onmouseout="changeTextColor(false)"><br>
+        <div id="special-div">My Special Div</div>
+        </center>
+        <script>
+            function changeTextColor(shouldChange) {
+                const specialDiv = document.getElementById('special-div');
+                
+                if (shouldChange) {
+                    specialDiv.style.color = 'blue';
+                } else {
+                    specialDiv.style.color = 'red';
+                }
+            }
+        </script>
+    </body>
+</html>

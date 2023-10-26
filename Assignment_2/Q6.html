@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            .menu {
+                position: absolute;
+                width: 200px;
+                background-color: #333;
+                color: #fff;
+            }
+
+            .menu-left {
+                left: 0;
+            }
+
+            .menu-right {
+                right: 0;
+            }
+
+            .menu-item {
+                padding: 10px;
+                text-align: center;
+                text-decoration: none;
+                color: #fff;
+                display: block;
+                transition: background-color 0.3s;
+            }
+
+            .menu-item:hover {
+                background-color: #555;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="menu menu-left" id="sticky-menu">
+            <a class="menu-item" href="#">Home</a>
+            <a class="menu-item" href="#">Trending</a>
+            <a class="menu-item" href="#">Updates</a>
+            <a class="menu-item" href="#">New Release</a>
+        </div>
+
+        <div style="margin-left: 220px; padding: 20px;">
+            <h1>Zoro</h1>
+            <p>Zoro is a free website for watching anime online that offers subbed or dubbed anime in ultra HD quality without any registration or payment.</p>
+        </div>
+
+        <script>
+            const menu = document.getElementById('sticky-menu');
+            const menuOffset = menu.offsetTop;
+            
+            window.onscroll = function() {
+                if (window.pageYOffset >= menuOffset) {
+                    menu.style.position = 'fixed';
+                    menu.style.top = '0';
+                } else {
+                    menu.style.position = 'absolute';
+                    menu.style.top = menuOffset + 'px';
+                }
+            };
+        </script>
+    </body>
+</html>

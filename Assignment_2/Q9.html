@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body {
+                margin: 0;
+                padding: 0;
+                background-color: #f0f0f0;
+                font-family: Arial, sans-serif;
+                height: 4000px;
+            }
+
+            .navbar {
+                background-color: #333;
+                position: sticky;
+                top: 0;
+                z-index: 100;
+            }
+
+            .navbar ul {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
+            }
+
+            .navbar li {
+                float: left;
+            }
+
+            .navbar li a {
+                display: block;
+                color: white;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+            }
+
+            .navbar li a:hover {
+                background-color: #555;
+            }
+
+            .background-image {
+                background-image: url('5.jpeg');
+                background-repeat: repeat-x;
+                background-size: auto 100%;
+                height: 300px;
+            }
+
+            .styled-text {
+                padding: 20px;
+                font-size: 24px;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        
+        <div class="background-image"></div>
+
+        <div class="navbar">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+
+        <div class="styled-text">
+            <h1>Pokémon</h1>
+            <p>Pokémon is a Japanese media franchise consisting of video games, animated series and films, a trading card game, and other related media.</p>
+        </div>
+    </body>
+</html>

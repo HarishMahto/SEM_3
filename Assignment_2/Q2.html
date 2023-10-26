@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .table {
+            display: table;
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .table-row {
+            display: table-row;
+        }
+
+        .table-header {
+            display: table-cell;
+            font-weight: bold;
+            background-color: #f0f0f0;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+
+        .table-cell {
+            display: table-cell;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+
+        .nested-table {
+            display: table;
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .nested-row {
+            display: table-row;
+        }
+
+        .nested-cell {
+            display: table-cell;
+            padding: 5px;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    
+
+    <div class="table">
+        <div class="table-row">
+            <div class="table-header">Personal info</div>
+            <div class="table-header">Acadmeics</div>
+        </div>
+        <div class="table-row">
+            <div class="table-cell">
+                <div class="nested-table">
+                    <div class="nested-row">
+                        <div class="table">
+                            <div class="table-row">
+                                <div class="table-header">Name</div>
+                                <div class="table-header">Address</div>
+                            </div>
+                            <div class="table-row">
+                                <div class="table-cell">Mayur Ramgir</div>
+                                <div class="table-cell">Boston, MA, USA</div>
+                            </div>
+                            <div class="table-row">
+                                <div class="table-cell">Harish Mahto</div>
+                                <div class="table-cell">Bhubaneswar, Odisha, India</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="table-cell">
+                <div class="table">
+                    <div class="table-row">
+                        <div class="table-header">Course</div>
+                    </div>
+                    <div class="table-row">
+                        <div class="table-cell">MS Computational Science & Engineering</div>
+                    </div>
+                    <div class="table-row">
+                        <div class="table-cell">BTech Computational Science & Engineering</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
