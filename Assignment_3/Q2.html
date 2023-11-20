@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Click and Double-Click Events</title>
+</head>
+<body>
+
+  <p id="a">Click me!</p>
+
+  <script>
+    const a = document.getElementById('a');
+
+    a.addEventListener('click', function() {
+      alert('Click event triggered!');
+    });
+
+    a.addEventListener('dblclick', function() {
+      alert('Double-click event triggered!');
+    });
+  </script>
+
+</body>
+</html>

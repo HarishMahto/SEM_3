@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock, Paper, Scissors Game</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        
+        img {
+            height: 60px;
+            width: 60px;
+
+         }
+
+        #game-container {
+            text-align: center;
+            background-color: rgb(47, 255, 0);
+            min-width: 50%;
+            min-height: 40%;
+        }
+
+        #result {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        #score {
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="game-container">
+    <h1>Rock, Paper, Scissors</h1><br>
+    <img src="rock-paper-scissors.png" height="200" width="200"><br>
+    <p id="result">Choose: Rock, Paper, or Scissors</p>
+    <div>
+        <button onclick="playGame('rock')"><img src="rock.png" title="Rock"><br>Rock</button>
+        <button onclick="playGame('paper')"><img src="paper.png" title="Paper"><br>Paper</button>
+        <button onclick="playGame('scissors')"><img src="scissors.png" title="Scissors"><br>Scissors</button>
+    </div>
+    <p id="score">Score: <span id="user-score">0</span> - <span id="computer-score">0</span></p>
+</div>
+
+<script>
+    function playGame(userChoice) {
+        const choices = ['rock', 'paper', 'scissors'];
+        const computerChoice = choices[Math.floor(Math.random() * 3)];
+
+        const result = determineWinner(userChoice, computerChoice);
+
+        document.getElementById('result').innerText = `You chose ${userChoice}. Computer chose ${computerChoice}. ${result}`;
+
+        if (result === 'You win!') {
+            incrementScore('user-score');
+        } else if (result === 'You lose!') {
+            incrementScore('computer-score');
+        }
+
+        saveScore();
+
+    }
+
+    function determineWinner(user, computer) {
+        if (user === computer) {
+            return 'It\'s a tie!';
+        }
+
+        if ((user === 'rock' && computer === 'scissors') ||
+            (user === 'paper' && computer === 'rock') ||
+            (user === 'scissors' && computer === 'paper')) {
+            return 'You win!';
+        } else {
+            return 'You lose!';
+        }
+    }
+
+    function incrementScore(elementId) {
+        const scoreElement = document.getElementById(elementId);
+        scoreElement.innerText = parseInt(scoreElement.innerText) + 1;
+    }
+
+    function saveScore() {
+        const userScore = document.getElementById('user-score').innerText;
+        const computerScore = document.getElementById('computer-score').innerText;
+
+        localStorage.setItem('userScore', userScore);
+        localStorage.setItem('computerScore', computerScore);
+    }
+
+    function loadScore() {
+        const userScore = localStorage.getItem('userScore') || 0;
+        const computerScore = localStorage.getItem('computerScore') || 0;
+
+        document.getElementById('user-score').innerText = userScore;
+        document.getElementById('computer-score').innerText = computerScore;
+    }
+
+    window.onload = loadScore;
+</script>
+
+</body>
+</html>

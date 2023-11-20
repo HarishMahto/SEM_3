@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Job Listings</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+
+    #filter {
+      margin-bottom: 10px;
+    }
+
+    .job-item {
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin: 10px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Job Listings</h1>
+
+  <label for="filter">Filter by Category:</label>
+  <select id="filter">
+    <option value="all">All Categories</option>
+    <option value="marketing">Marketing</option>
+    <option value="Information Technology">Information Technology</option>
+    <option value="Design">Design</option>
+    <option value="Finance">Finance</option>
+    <option value="Engineering">Engineering</option>
+    <option value="Human Resources">Human Resources</option>
+    <option value="Hospitality">Hospitality</option>
+  </select>
+
+  <div id="job-listings">
+    <!-- Job listings will be displayed here dynamically -->
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script>
+    // Sample data
+    const jobs = [
+        { title: 'Marketing Specialist', category: 'marketing' },
+        { title: 'Software Engineer', category: 'Information Technology' },
+        { title: 'Data Scientist', category: 'Information Technology' },
+        { title: 'UX/UI Designer', category: 'Design' },
+        { title: 'Graphic Designer', category: 'Design' },
+        { title: 'Marketing Manager', category: 'Marketing' },
+        { title: 'Content Writer', category: 'Marketing' },
+        { title: 'Financial Analyst', category: 'Finance' },
+        { title: 'Accountant', category: 'Finance' },
+        { title: 'Civil Engineer', category: 'Engineering' },
+        { title: 'Mechanical Engineer', category: 'Engineering' },
+        { title: 'HR Specialist', category: 'Human Resources' },
+        { title: 'Recruitment Coordinator', category: 'Human Resources' },
+        { title: 'Registered Nurse', category: 'Hospitality' },
+        { title: 'Pharmacist', category: 'Hospitality' },
+        { title: 'Social Media Manager', category: 'marketing' },
+        { title: 'Customer Support Representative', category: 'marketing' },
+        { title: 'Event Planner', category: 'marketing' },
+        { title: 'Electrician', category: 'Engineering' },
+        { title: 'Sales Representative', category: 'marketing' },
+    ];
+
+    // Function to display jobs based on the selected category
+    function displayJobs(category) {
+      const jobListings = $('#job-listings');
+      jobListings.empty();
+
+      jobs.forEach(job => {
+        if (category === 'all' || job.category === category) {
+          const jobItem = `<div class="job-item">
+                              <h3>${job.title}</h3>
+                              <p>Category: ${job.category}</p>
+                            </div>`;
+          jobListings.append(jobItem);
+        }
+      });
+    }
+
+    // Initial display of all jobs
+    displayJobs('all');
+
+    // Event listener for category filter
+    $('#filter').change(function () {
+      const selectedCategory = $(this).val();
+      displayJobs(selectedCategory);
+    });
+  </script>
+
+</body>
+</html>

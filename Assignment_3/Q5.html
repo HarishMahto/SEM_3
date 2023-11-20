@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>jQuery Methods Example</title>
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <style>
+    #myDiv {
+      width: 200px;
+      height: 200px;
+      background-color: #f0f0f0;
+      border: 1px solid #ccc;
+      margin: 20px;
+      text-align: center;
+      padding-top: 20px;
+      display: none;
+    }
+
+    #myButton {
+      padding: 10px;
+      margin: 20px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <button id="myButton">Click Me</button>
+  <div id="myDiv">This is a hidden div.</div>
+
+  <script>
+    $(document).ready(function () {
+      $('#myButton').click(function () {
+        $('#myDiv').slideDown();
+      });
+
+      $('#myButton').dblclick(function () {
+        $('#myDiv').animate({ width: 'toggle', height: 'toggle' });
+      });
+
+      $('#myDiv').mouseenter(function () {
+        $(this).fadeIn();
+      });
+
+      $('#myDiv').mouseleave(function () {
+        $(this).hide();
+      });
+
+      $('#myButton').mouseleave(function () {
+        $('#myDiv').show();
+      });
+
+      $('#myButton').click(function () {
+        $('#myDiv').attr('class', 'highlight');
+      });
+
+      $('#myButton').dblclick(function () {
+        $('#myDiv').html('Content changed!');
+      });
+    });
+  </script>
+
+  <style>
+    .highlight {
+      background-color: yellow;
+    }
+  </style>
+
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Table Manipulation</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 50%;
+      margin-bottom: 20px;
+    }
+
+    th, td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #4caf50;
+      color: white;
+    }
+
+    button {
+      background-color: #4caf50;
+      color: white;
+      padding: 10px;
+      margin-right: 10px;
+      cursor: pointer;
+    }
+
+    input[type="text"] {
+      padding: 8px;
+      margin-right: 10px;
+    }
+
+    .remove-button {
+      background-color: #f44336;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Table Manipulation</h1>
+
+  <table id="myTable">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Table rows will be added dynamically here -->
+    </tbody>
+  </table>
+
+  <button id="addRowBtn" onclick="addTableRow()">Add Row</button>
+
+  <hr>
+
+  <label for="removeId">Remove element by ID:</label>
+  <input type="text" id="removeId" placeholder="Enter ID">
+  <button onclick="removeElement()">Remove</button>
+
+  <script>
+    let rowCounter = 1;
+
+    function addTableRow() {
+      const tableBody = document.getElementById('myTable').getElementsByTagName('tbody')[0];
+      const newRow = tableBody.insertRow();
+      const cell1 = newRow.insertCell(0);
+      const cell2 = newRow.insertCell(1);
+      cell1.innerHTML = `ID_${rowCounter}`;
+      cell2.innerHTML = `Name_${rowCounter}`;
+      rowCounter++;
+
+      // Change button color on click
+      document.getElementById('addRowBtn').style.color = getRandomColor();
+    }
+
+    function getRandomColor() {
+      const letters = '0123456789ABCDEF';
+      let color = '#';
+      for (let i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+      }
+      return color;
+    }
+
+    function removeElement() {
+      const removeId = document.getElementById('removeId').value.trim();
+      const elementToRemove = document.getElementById(removeId);
+
+      if (elementToRemove) {
+        elementToRemove.parentNode.removeChild(elementToRemove);
+      } else {
+        alert('Element not found!');
+      }
+    }
+  </script>
+
+</body>
+</html>

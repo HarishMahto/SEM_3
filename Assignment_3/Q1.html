@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Count Child Elements using jQuery</title>
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      const numberOfPElements = $('#selected p').length;
+
+      console.log(`Number of <p> elements: ${numberOfPElements}`);
+
+      document.getElementById('result').innerText = `Number of <p> elements are: ${numberOfPElements}`;
+    });
+  </script>
+</head>
+<body>
+
+  <div id="selected">
+    <p>Red</p>
+    <p>White</p>
+    <p>Green</p>
+    <p>Black</p>
+    <p>Blue</p>
+    <p>Orange</p>
+    <p id="result"></p>
+  </div>
+
+  
+
+</body>
+</html>

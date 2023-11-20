@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Home</title>
+</head>
+<body>
+    <img src="demonslayer.png" height="200px" width="200px">
+    <div class="container">
+        <h1 class="h1">Welcome to Our Website</h1>
+        <h1 class="h1">Demon Slayer</h1>
+        <div class="quote">
+            <p>"The Demon Slayer Corps. We number in the hundreds. An organization completely unrecognized by the government. Since ancient times, we have existed to hunt down demons."</p>
+            <p class="author">-  Sakonji Urokodaki introducing the Demon Slayer</p>
+        </div>
+        <p><a href="about.html"><h2 class="h2">About Us...</h2></a></p>
+
+
+        <div class="container2">
+            <h1>Contact Us</h1>
+            <form id="contactForm">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+        
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+        
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" required></textarea>
+        
+                <button type="submit">Submit</button>
+            </form>
+            <p id="error-message"></p>
+        </div>
+
+    </div>
+    
+    <script src="script.js"></script>
+    
+</body>
+</html>

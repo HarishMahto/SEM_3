@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>About</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+    </script>
+    <script>
+        $(document).ready(function(){
+            $("#flip1").click(function(){
+                $("#panel1").slideToggle("fast");
+            });
+            $("#flip2").click(function(){
+                $("#panel2").slideToggle("fast");
+            });
+            $("#flip3").click(function(){
+                $("#panel3").slideToggle("fast");
+            });
+        });
+    </script>
+
+</head>
+<body>
+    <p style="font-size: xx-large; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; color: #ffffff; text-align: center;">Characters</p>
+    <br>
+<div class="container2">
+    <table>
+        <tr>
+            <td><img src="Tanjiro.webp" class="icon"></td>
+            <td>
+                <div id="flip1"><h2 id="h2">Tanjiro Kamado</h2></div>
+                <div id="panel1">
+                    <p>Tanjiro Kamado is the main protagonist of Demon Slayer: Kimetsu no Yaiba. He is a Demon Slayer in the Demon Slayer Corps, who joined to find a remedy to turn his sister, Nezuko Kamado, back into a human and to hunt down and kill demons,[5] and later swore to defeat Muzan Kibutsuji,[6] the King of Demons, in order to prevent others from suffering the same fate as him.[7]
+                        <br>
+                        Before he became a Demon Slayer, Tanjiro was a coal burner before his family was slaughtered by Muzan while his younger sister, Nezuko, was turned into a demon.
+                    </p>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td><img src="Zenitsu.webp" class="icon"></td>
+            <td>
+                <div id="flip2"><h2 id="h2">Zenitsu Agatsuma</h2></div>
+                <div id="panel2">
+                    <p>
+                        Zenitsu Agatsuma is one of the main characters of Demon Slayer: Kimetsu no Yaiba and along with Inosuke Hashibira, a travelling companion of Tanjiro Kamado and Nezuko Kamado. He is also a Demon Slayer in the Demon Slayer Corps.
+                    </p>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td><img src="Inosuke.webp" class="icon"></td>
+            <td>
+                <div id="flip3"><h2 id="h2">Inosuke Hashibira</h2></div>
+                <div id="panel3">
+                    <p>
+                        Inosuke Hashibira is one of the main characters of Demon Slayer: Kimetsu no Yaiba and along with Zenitsu Agatsuma, a traveling companion of Tanjiro Kamado and Nezuko Kamado. He is also a Demon Slayer in the Demon Slayer Corps.                    </p>
+                </div>
+            </td>
+        </tr>
+    </table>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
