@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 2px solid #dc0000;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #e79386;
+        }
+
+        @media screen and (max-width: 600px) {
+            table {
+                border: 0;
+            }
+
+            th, td {
+                display: block;
+                width: 100%;
+                box-sizing: border-box;
+            }
+
+            td {
+                text-align: right;
+                padding-left: 50%;
+                text-align: right;
+            }
+
+            th:before {
+                content: attr(data-label);
+                float: left;
+                font-weight: bold;
+            }
+        }
+    </style>
+    <title>Q1</title>
+</head>
+<body>
+
+    <h2>Table</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th data-label="Name">Name</th>
+                <th data-label="Age">Age</th>
+                <th data-label="City">City</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td data-label="Name">Harish</td>
+                <td data-label="Age">20</td>
+                <td data-label="City">Ranchi</td>
+            </tr>
+            <tr>
+                <td data-label="Name">Sandy</td>
+                <td data-label="Age">19</td>
+                <td data-label="City">Bhuvneshwar</td>
+            </tr>
+            <tr>
+                <td data-label="Name">Amber</td>
+                <td data-label="Age">22</td>
+                <td data-label="City">Kolkata</td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>
